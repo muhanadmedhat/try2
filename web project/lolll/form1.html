@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <link href="styles/style.css" rel="stylesheet"></link>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+       
+            
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="form1.html">Sign Up</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Newest</a>
+          <div class="dropdown-content">
+            <a href="men.html">Men</a>
+            <a href="women.html">Women</a>
+            <a href="kids.html">Kids</a>
+          </div>
+        </li>
+      </ul>
+    <h1>▁ ▂ ▄ ▅ ▆ ▇ █ 🆂🆃🆁🅴🅴🆃 🆆🅴🅰🆁🆂 █ ▇ ▆ ▅ ▄ ▂ ▁</h1>
+<hr>
+<br>
+<div class="form">
+    <h2>Sign Up</h2>
+    <br>
+    <form >
+        <label for="fname" style="width:100% ;"><b>First Name:</b></label>
+        <input type="text" id="fname" placeholder="Enter your first name" name="fname" width="100%">
+        <label for="lname" ><b>Last Name:</b></label>
+        
+        <input type="text" id="lname" placeholder="Enter your last name" name="lname" width="100%">
+        <br>
+        <label for="email"><b>Enter your email:</b></label>
+        <input id="email" type="text" name="email" placeholder="Enter your email">
+         <label for="pass"><b>Password:</b></label> 
+         <input id="password" type="password" placeholder="Enter password" name="pass">
+         <label for="pass-rep"><b>Repeat your password:</b></label>
+         <input id="pass-repeat" type="password" placeholder="Repeat the password" name="pass-repeat"> 
+         <label for="num"><b>Mobile phone number</b></label>
+         <input id="numb" type="number" placeholder="Enter your phone number">
+         <label for="address"><b>Address:</b></label>
+         <input type="text" placeholder="Enter your address">
+         <label for="gender"><b>Gender:</b><br></label>
+         <input type="radio" name="gender" value="male">Male<br>
+         <input type="radio" name="gender" value="female">Female<br><br>
+         <input type="checkbox" style="margin-left:30%  ;"><b>Agree in terms & conditions</b><br><br>
+            <button type="submit" class="signup" onclick="checkp()"><h4>Register</h4></button>
+            <br>
+         <button type="reset" class="res"><h4>Reset</h4></button>
+    </form>
+</div>
+<script>
+    function special(password){
+    const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    return specialChars.test(password);
+}
+function checkp(){
+    let eml = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+    let passrep=document.getElementById("pass-repeat")
+    let result = eml.includes("@");
+    let cap = password.charCodeAt(0);
+    var number=document.getElementById("numb");
+        let numlength=number.length;
+    if(result == true && (cap >= 65 && cap <= 90) && special(pass) == true && pass.length >= 8 && pass.includes(" ") == false && numlength == 11 && pass === passrep){
+        alert("Account has been created");
+        window.location = "index.html";
+    }
+    else{
+        alert("Sign up failed please try again");
+        window.location = "form1.html";
+    }
+}
+
+</script>
+</body>
+</html>
